@@ -1,0 +1,63 @@
+{
+  "name": "@stacksjs/build",
+  "type": "module",
+  "version": "0.60.3",
+  "description": "The Stacks framework build tools and configurations.",
+  "author": "Chris Breuer",
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/chrisbbreuer",
+  "homepage": "https://github.com/stacksjs/stacks/tree/main/storage/framework/core/build#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stacksjs/stacks.git",
+    "directory": "./storage/framework/core/build"
+  },
+  "bugs": {
+    "url": "https://github.com/stacksjs/stacks/issues"
+  },
+  "keywords": [
+    "build",
+    "stacks",
+    "framework",
+    "typescript",
+    "javascript",
+    "vite",
+    "nitro",
+    "vue"
+  ],
+  "exports": {
+    ".": {
+      "bun": "./src/index.ts",
+      "import": "./dist/index.js"
+    },
+    "./*": {
+      "bun": "./src/*",
+      "import": "./dist/*"
+    }
+  },
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "contributors": ["Chris Breuer <chris@stacksjs.org>"],
+  "files": ["README.md", "dist", "src"],
+  "scripts": {
+    "build": "bun --bun build.ts",
+    "typecheck": "bun --bun tsc --noEmit",
+    "prepublishOnly": "bun run build"
+  },
+  "peerDependencies": {
+    "bun-plugin-dts-auto": "^0.11.1",
+    "vue-docgen-web-types": "^0.1.8"
+  },
+  "dependencies": {
+    "@stacksjs/cli": "workspace:*",
+    "@stacksjs/path": "workspace:*",
+    "@stacksjs/storage": "workspace:*",
+    "bun-plugin-dts-auto": "^0.11.1",
+    "vue-docgen-web-types": "^0.1.8"
+  },
+  "devDependencies": {
+    "@stacksjs/development": "workspace:*",
+    "@types/babel__generator": "^7.6.8",
+    "@types/babel__traverse": "^7.20.5"
+  }
+}
